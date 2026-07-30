@@ -48,19 +48,19 @@ StudyMateAI/
 ## 📸 Screenshots
 
 ### 🏠 Home Page
-![Home](screenshots/home.png)
+![Home](home.png)
 
 ### ✨ Features
-![Features](screenshots/features.png)
+![Features](feature.png)
 
 ### 💬 AI Chat Interface
-![Chat](screenshots/chat.png)
+![Chat](chat.png)
 
 ### 🤖 AI Response
-![AI Response](screenshots/response.png)
+![AI Response](response.png)
 
 ### ℹ️ About Page
-![About](screenshots/about.png)
+![About](about.png)
 
 ## ⚙️ Installation
 
