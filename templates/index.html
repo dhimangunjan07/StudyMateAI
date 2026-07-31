@@ -2,213 +2,190 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyMateAI</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-<title>StudyMateAI</title>
-
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+    <!-- ================= NAVBAR ================= -->
 
-<nav>
+    <nav>
 
-<div class="logo">
-🤖 StudyMateAI
-</div>
+        <div class="logo">
+            🤖 StudyMateAI
+        </div>
 
-<ul>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/chat">Chat</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
 
-<li><a href="/">Home</a></li>
-<li><a href="/chat">Chat</a></li>
-<li><a href="/about">About</a></li>
+    </nav>
 
-</ul>
+    <!-- ================= HERO ================= -->
 
-</nav>
+    <section class="hero">
 
-<!-- HERO -->
+        <div class="left">
 
-<section class="hero">
+            <h1>
+                Your Personal
+                <span>AI Study</span>
+                Assistant
+            </h1>
 
-<div class="left">
+            <p>
+                Homework Solving • Coding Help • Quiz Generation •
+                Concept Explanation • AI Powered Learning
+            </p>
 
-<h1>
+            <div class="buttons">
 
-Your Personal
-<span>homework</span>
-Assistant
+                <a href="/chat" class="btn">
+                    Start Solving →
+                </a>
 
-</h1>
+                <a href="/about" class="btn secondary">
+                    Learn More
+                </a>
 
-<p>
-Homework Solving.
-Coding Help.
-Quiz Generation.
-Concept Explanation.
+            </div>
 
-</p>
-<a href="/about" class="btn" style="margin-left:15px;background:#374151;">
-Learn More
-</a>
+        </div>
 
-<a href="/chat" class="btn">
-<section style="width:90%;margin:60px auto;display:flex;justify-content:space-around;text-align:center;">
+        <div class="right">
 
-<div>
-<h2>24/7</h2>
-<p>AI Assistance</p>
-</div>
+            <div class="glass">
 
-<div>
-<h2>1000+</h2>
-<p>Homework Queries</p>
-</div>
+                <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png"
+                    alt="AI Assistant">
 
-<div>
-<h2>Instant</h2>
-<p>Responses</p>
-</div>
+            </div>
 
-</section>    
+        </div>
 
+    </section>
 
-Start Solving →
+    <!-- ================= STATS ================= -->
 
-</a>
+    <section class="stats">
 
-</div>
+        <div class="stat-box">
+            <h2>24/7</h2>
+            <p>AI Assistance</p>
+        </div>
 
-<div class="right">
+        <div class="stat-box">
+            <h2>1000+</h2>
+            <p>Homework Queries</p>
+        </div>
 
-<div class="glass">
+        <div class="stat-box">
+            <h2>Instant</h2>
+            <p>Responses</p>
+        </div>
 
-<img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png">
+    </section>
 
-</div>
+    <!-- ================= FEATURES ================= -->
 
-</div>
+    <section class="features">
 
-</section>
+        <h2 class="title">
+            Why Choose StudyMateAI?
+        </h2>
 
-<!-- FEATURES -->
+        <div class="cards">
 
-<section class="features">
+            <div class="card">
+                <i class="fa-solid fa-robot"></i>
 
-<h2 class="title">
+                <h3>AI Study Assistant</h3>
 
-Why Choose StudyMateAI?
+                <p>
+                    Ask any academic question and receive clear,
+                    step-by-step explanations instantly.
+                </p>
 
-</h2>
+            </div>
 
-<div class="cards">
+            <div class="card">
 
-<div class="card">
+                <i class="fa-solid fa-book"></i>
 
-<i class="fa-solid fa-robot"></i>
+                <h3>Concept Explanation</h3>
 
-<h3>AI Study Assistant</h3>
+                <p>
+                    Learn complex concepts in simple language with
+                    practical examples.
+                </p>
 
-<p>
+            </div>
 
-Ask any study question and receive
-step-by-step explanations.
+            <div class="card">
 
-</p>
+                <i class="fa-solid fa-code"></i>
 
-</div>
+                <h3>Coding Assistant</h3>
 
-<div class="card">
+                <p>
+                    Generate code, debug errors and understand
+                    programming concepts easily.
+                </p>
 
-<i class="fa-solid fa-book"></i>
+            </div>
 
-<h3>Concept Explanation</h3>
+            <div class="card">
 
-<p>
+                <i class="fa-solid fa-graduation-cap"></i>
 
-Understand difficult topics in
-simple language.
+                <h3>Quiz Generator</h3>
 
-</p>
+                <p>
+                    Generate quizzes and practice questions from
+                    any topic within seconds.
+                </p>
 
-</div>
+            </div>
 
+        </div>
 
-</p>
+    </section>
 
-</div>
+    <!-- ================= CTA ================= -->
 
-<div class="card">
+    <section class="cta">
 
-<i class="fa-solid fa-code"></i>
+        <h2>
+            Ready to Study Smarter?
+        </h2>
 
-<h3>Coding Assistant</h3>
+        <p>
+            Powered by Groq AI, StudyMateAI helps students solve homework,
+            learn programming, understand concepts and improve productivity.
+        </p>
 
-<p>
+        <a href="/chat" class="btn">
+            Launch Assistant
+        </a>
 
-Debug code and learn programming
-with AI.
+    </section>
 
-</p>
+    <!-- ================= FOOTER ================= -->
 
-</div>
+    <footer>
 
-<div class="card">
+        © 2026 StudyMateAI • Developed by Gunjan Dhiman
 
-<i class="fa-solid fa-graduation-cap"></i>
-
-<h3>Quiz Generator</h3>
-
-<p>
-
-Create quizzes automatically
-from any topic.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CTA -->
-
-<section style="text-align:center;padding:80px;">
-
-<h2 style="font-size:45px;margin-bottom:20px;">
-
-Ready to Study Smarter?
-
-</h2>
-
-<p style="color:#d1d5db;margin-bottom:35px;">
-
-Powered by Groq, StudyMateAI is your ultimate AI study companion for solving homework, understanding concepts, and enhancing learning.
-
-</p>
-
-<a href="/chat" class="btn">
-
-Launch Assistant
-
-</a>
-
-</section>
-
-<footer>
-
-© 2026 StudyMateAI • Developed by Gunjan Dhiman
-
-</footer>
+    </footer>
 
 </body>
 

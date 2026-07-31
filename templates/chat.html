@@ -3,118 +3,152 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>StudyMateAI Chat</title>
+    <title>StudyMateAI Chat</title>
 
-<link rel="stylesheet"
-href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
 
 </head>
 
 <body>
 
-<!-- Navbar -->
+    <!-- ================= NAVBAR ================= -->
 
-<nav>
+    <nav>
 
-<div class="logo">
+        <div class="logo">
+            🤖 StudyMateAI
+        </div>
 
-🤖 StudyMateAI
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/chat">Chat</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
 
-</div>
+    </nav>
 
-<ul>
+    <!-- ================= CHAT ================= -->
 
-<li><a href="/">Home</a></li>
-<li><a href="/chat">Chat</a></li>
-<li><a href="/about">About</a></li>
+    <div class="chat-container">
 
-</ul>
+        <h2 class="chat-title">
+            AI Study Assistant
+        </h2>
 
-</nav>
+        <div class="chat-box" id="chatBox">
 
-<!-- Chat Container -->
+            {% if question %}
 
-<div class="chat-container">
+            <div class="message user">
 
-<h2 style="text-align:center;margin-bottom:25px;">
+                <div class="avatar">
+                    👤
+                </div>
 
-AI Homework Assistant
+                <div class="bubble user-bubble">
 
-</h2>
+                    <strong>You</strong><br><br>
 
-<div class="chat-box" id="chatBox">
+                    {{ question }}
 
-{% if question %}
+                </div>
 
-<div class="user">
+            </div>
 
-<strong>You</strong><br><br>
+            {% endif %}
 
-{{ question }}
+            {% if answer %}
 
-</div>
+            <div class="message bot">
 
-{% endif %}
+                <div class="avatar">
+                    🤖
+                </div>
 
-{% if answer %}
+                <div class="bubble bot-bubble">
 
-<div class="bot">
+                    <strong>StudyMateAI</strong>
 
-<strong>StudyMateAI</strong><br><br>
+                    <hr>
 
-{{ answer }}
+                    {{ answer|safe }}
 
-</div>
+                </div>
 
-{% endif %}
+            </div>
 
-</div>
+            {% endif %}
 
-<form action="/chat" method="POST">
+        </div>
 
-<div class="input-area">
+        <!-- ================= INPUT ================= -->
 
-<input
-type="text"
-name="question"
-placeholder="Ask your homework question..."
-required>
+        <form action="/chat" method="POST">
 
-<button type="submit">
+            <div class="input-area">
 
-<i class="fa-solid fa-paper-plane"></i>
+                <input
+                    type="text"
+                    name="question"
+                    placeholder="Ask anything..."
+                    autocomplete="off"
+                    required>
 
-</button>
+                <button type="submit">
 
-</div>
+                    <i class="fa-solid fa-paper-plane"></i>
 
-</form>
+                </button>
 
-<div style="margin-top:25px;text-align:center;">
+            </div>
 
-<button onclick="clearChat()" class="btn">
+        </form>
 
-Clear Chat
+        <div class="chat-actions">
 
-</button>
+            <button onclick="clearChat()" class="btn">
 
-</div>
+                <i class="fa-solid fa-trash"></i>
 
-</div>
+                Clear Chat
 
-<footer>
+            </button>
 
-Gunjan Dhiman © 2026
+        </div>
 
-</footer>
+    </div>
 
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        © 2026 StudyMateAI • Developed by Gunjan Dhiman
+
+    </footer>
+
+    <!-- Highlight.js -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
+
+    <script>
+        hljs.highlightAll();
+
+        const chatBox = document.getElementById("chatBox");
+
+        chatBox.scrollTop = chatBox.scrollHeight;
+    </script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 

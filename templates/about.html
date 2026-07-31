@@ -3,97 +3,234 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About StudyMateAI</title>
+    <title>About StudyMateAI</title>
 
-<link rel="stylesheet"
-href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
 <body>
 
-<nav>
+    <!-- ================= NAVBAR ================= -->
 
-<div class="logo">
-🤖 StudyMateAI
-</div>
+    <nav>
 
-<ul>
+        <div class="logo">
+            🤖 StudyMateAI
+        </div>
 
-<li><a href="/">Home</a></li>
-<li><a href="/chat">Chat</a></li>
-<li><a href="/about">About</a></li>
+        <ul class="nav-links">
 
-</ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/chat">Chat</a></li>
+            <li><a href="/about">About</a></li>
 
-</nav>
+        </ul>
 
-<section style="width:85%;margin:140px auto;text-align:center;">
+    </nav>
 
-<h1 style="font-size:50px;margin-bottom:30px;">
+    <!-- ================= ABOUT ================= -->
 
-About StudyMateAI
+    <section class="about-section">
 
-</h1>
+        <h1>
+            About <span>StudyMateAI</span>
+        </h1>
 
-<p style="font-size:20px;color:#d1d5db;line-height:40px;">
+        <p class="about-text">
 
-StudyMateAI is an AI-powered study assistant designed to help
-students solve study problems, understand concepts, summarize notes,
-generate quizzes, and improve learning using Groq.
+            StudyMateAI is an AI-powered learning assistant designed to
+            help students understand concepts, solve homework, generate
+            quizzes, explain programming topics, and enhance learning
+            through intelligent conversations.
 
-</p>
+            Built using Flask and the Groq API, StudyMateAI delivers
+            accurate, fast, and easy-to-understand responses for students
+            across different subjects.
 
-<div class="cards" style="margin-top:60px;">
+        </p>
 
-<div class="card">
+    </section>
 
-<h3>🎯 Mission</h3>
+    <!-- ================= PROJECT HIGHLIGHTS ================= -->
 
-<p>
+    <section class="features">
 
-Make learning smarter, faster, and accessible to every student.
+        <h2 class="title">
 
-</p>
+            What Makes StudyMateAI Special?
 
-</div>
+        </h2>
 
-<div class="card">
+        <div class="cards">
 
-<h3>🚀 Technologies</h3>
+            <div class="card">
 
-<p>
+                <i class="fa-solid fa-brain"></i>
 
-Flask • HTML • CSS • JavaScript • Groq 
+                <h3>AI Powered</h3>
 
-</p>
+                <p>
 
-</div>
+                    Uses the Groq API to generate intelligent,
+                    real-time responses for academic queries.
 
-<div class="card">
+                </p>
 
-<h3>📚 SDG Goal</h3>
+            </div>
 
-<p>
+            <div class="card">
 
-UN SDG 4 – Quality Education
+                <i class="fa-solid fa-book-open"></i>
 
-</p>
+                <h3>Easy Learning</h3>
 
-</div>
+                <p>
 
-</div>
+                    Simplifies difficult concepts with
+                    step-by-step explanations and examples.
 
-</section>
+                </p>
 
-<footer>
+            </div>
 
-Gunjan Dhiman © 2026
+            <div class="card">
 
-</footer>
+                <i class="fa-solid fa-code"></i>
+
+                <h3>Programming Help</h3>
+
+                <p>
+
+                    Assists students with coding,
+                    debugging and explanation of programs.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <h3>Fast Responses</h3>
+
+                <p>
+
+                    Powered by Groq to provide
+                    lightning-fast AI answers.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= MISSION ================= -->
+
+    <section class="features">
+
+        <h2 class="title">
+
+            Our Mission
+
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <i class="fa-solid fa-bullseye"></i>
+
+                <h3>Mission</h3>
+
+                <p>
+
+                    To make quality education smarter,
+                    faster, and accessible for every student.
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-laptop-code"></i>
+
+                <h3>Technology Stack</h3>
+
+                <p>
+
+                    Flask<br>
+                    HTML<br>
+                    CSS<br>
+                    JavaScript<br>
+                    Groq API
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-earth-americas"></i>
+
+                <h3>UN SDG Goal</h3>
+
+                <p>
+
+                    SDG 4<br>
+                    Quality Education
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <h2>
+
+            Ready to Learn with AI?
+
+        </h2>
+
+        <p>
+
+            Start chatting with StudyMateAI and make learning
+            smarter, faster and more interactive.
+
+        </p>
+
+        <a href="/chat" class="btn">
+
+            Start Chatting →
+
+        </a>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        © 2026 StudyMateAI • Developed by Gunjan Dhiman
+
+    </footer>
 
 </body>
 

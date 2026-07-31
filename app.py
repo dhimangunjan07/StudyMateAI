@@ -1,12 +1,13 @@
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 from groq import Groq
+import markdown
 import os
 
-# Load .env
+# ---------------- LOAD ENV ---------------- #
+
 load_dotenv()
 
-# Groq Client
 client = Groq(
     api_key=os.getenv("GROQ_API_KEY")
 )
@@ -50,22 +51,30 @@ def chat():
                     {
                         "role": "system",
                         "content": """
-You are HomeworkAI.
+You are StudyMateAI.
 
 Rules:
 
-1. Explain every answer simply.
+1. Explain everything in simple language.
 
-2. Solve mathematics step-by-step.
+2. Solve mathematics step by step.
 
-3. If coding question:
-   - Give code.
-   - Explain code.
+3. If the question is programming:
+   - Give the code inside Markdown code blocks.
+   - Explain the code using bullet points.
+   - Show the expected output inside a text code block.
 
 4. If theory:
-   - Explain with examples.
+   - Use headings.
+   - Use bullet points.
+   - Give examples.
 
-5. Always be student friendly.
+5. If comparison:
+   - Use Markdown tables.
+
+6. Never return code in paragraph format.
+
+7. Always format answers using proper Markdown.
 """
                     },
 
@@ -77,25 +86,28 @@ Rules:
                 ],
 
                 temperature=0.5,
-
                 max_tokens=1024
 
             )
 
-            answer = response.choices[0].message.content
+            raw_answer = response.choices[0].message.content
+
+            answer = markdown.markdown(
+                raw_answer,
+                extensions=[
+                    "fenced_code",
+                    "tables"
+                ]
+            )
 
         except Exception as e:
 
-            answer = str(e)
+            answer = f"<b>Error:</b> {e}"
 
     return render_template(
-
         "chat.html",
-
         question=question,
-
         answer=answer
-
     )
 
 
@@ -111,15 +123,11 @@ def upload():
         file = request.files["file"]
 
         if file:
-
             filename = file.filename
 
     return render_template(
-
         "upload.html",
-
         filename=filename
-
     )
 
 
